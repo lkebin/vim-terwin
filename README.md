@@ -2,6 +2,6 @@
 
 A tool for toggle terminal window
 
-# Usage
+## Usage
 
-`:TerWinToggle`
+`:help terwin`
