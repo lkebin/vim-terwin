@@ -1,5 +1,3 @@
-# Usage
-
 # terwin.vim
 
 A tool for toggle terminal window
