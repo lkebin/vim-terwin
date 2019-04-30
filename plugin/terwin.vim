@@ -49,7 +49,7 @@ function! s:terWinCreate()
         call s:terWinOpen()
     endif
 
-    setlocal winfixwidth
+    setlocal winfixheight
     let b:TerWin = 1
 endfunction
 

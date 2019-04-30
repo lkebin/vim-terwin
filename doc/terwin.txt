@@ -1,0 +1,54 @@
+*terwin.txt* A tool for toggle terminal window
+
+Author: Kebin Liu <https://lkebin.com>
+Liscense: Same terms as Vim itself (see |license|)
+
+This plugin is only avaiable if 'compatible' is not set.
+
+CONTENTS                                        *terwin-contents*
+
+    1. Introduction.......................|terwin|
+    1. Commands...........................|terwin-commands|
+    1. Options............................|terwin-options|
+    1. About..............................|terwin-about|
+
+INTRODUCTION                                    *terwin*
+
+TerWin attempt to manage one terminal window in the global scape.
+
+COMMANDS                                        *terwin-commands*
+
+                                                *:TerWinToggle*
+:TerWinToggle           Create terminal window, and place the window to 
+
+OPTIONS                                         *terwin-options*
+
+                                                *'g:TerWinCmd'*
+The command for terminal to run, default value same with 'shell'
+>
+  let g:TerWinCmd = &shell
+<
+                                                *'g:TerWinSize'*
+The size of terminal window
+>
+  let g:TerWinSize = 10
+<
+                                                *'g:TerWinLocation'*
+The location of terminal window to open
+>
+  let g:TerWinLocation = 'botright'
+<
+
+                                                *'g:TerWinBufName'*
+The buffer name of terminal window
+>
+  let g:TerWinBufName = 'TerWin'
+<
+
+ABOUT                                           *terwin-about*
+
+Grab the latest version or report a bug on Github:
+
+http://github.com/lkebin/vim-terwin
+
+ vim:tw=78:et:ft=help:norl:
