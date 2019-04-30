@@ -1,6 +1,5 @@
 " Location: plugin/terwin.vim
 " Maintainer: Kebin Liu <https://lkebin.com>
-" Version: 0.1
 
 if exists('g:load_terwin') || v:version < 801 || &cp
     finish
@@ -15,7 +14,7 @@ let g:TerWinLocation = 'botright'
 command! TerWinToggle call TerWinToggle()
 
 function! TerWinToggle()
-    if s:terWinExistsForTab()
+    if s:terWinExists()
         if s:terWinIsOpen()
             call s:terWinClose()
         else
@@ -35,25 +34,21 @@ function! s:terWinOpen()
     silent! execute 'buffer ' . g:TerWinBufName
 endfunction
 
-function! s:terWinCreate()
-    if !s:terWinExistsForTab()
-        silent! execute g:TerWinLocation . " " . g:TerWinSize . ' new'
+function! s:terWinCreate() abort
+    silent! execute g:TerWinLocation . " " . g:TerWinSize . ' new'
 
-        let l:options = {}
-        let l:options['term_name'] = g:TerWinBufName
-        let l:options['curwin'] = 1
-        let l:options['term_finish'] = 'close'
+    let l:options = {}
+    let l:options['term_name'] = g:TerWinBufName
+    let l:options['curwin'] = 1
+    let l:options['term_finish'] = 'close'
 
-        call term_start(g:TerWinCmd, l:options)
-    else
-        call s:terWinOpen()
-    endif
+    call term_start(g:TerWinCmd, l:options)
 
     setlocal winfixheight
     let b:TerWin = 1
 endfunction
 
-function! s:terWinExistsForTab()
+function! s:terWinExists()
     if !exists('g:TerWinBufName')
         return
     end
