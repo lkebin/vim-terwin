@@ -12,9 +12,9 @@ let g:TerWinCmd = &shell
 let g:TerWinBufName = 'TerWin'
 let g:TerWinLocation = 'botright'
 
-command! ToggleTerWin call ToggleTerWin()
+command! TerWinToggle call TerWinToggle()
 
-function! ToggleTerWin()
+function! TerWinToggle()
     if s:terWinExistsForTab()
         if s:terWinIsOpen()
             call s:terWinClose()
