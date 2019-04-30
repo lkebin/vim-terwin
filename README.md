@@ -4,4 +4,4 @@ A tool for toggle terminal window
 
 # Usage
 
-`:ToggleTerWin`
+`:TerWinToggle`
