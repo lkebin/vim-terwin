@@ -77,6 +77,7 @@ function! s:terWinCreate() abort
     call term_start(s:getTerWinCmd(), l:options)
 
     setlocal winfixheight
+    setlocal nobl
     let b:TerWin = 1
 endfunction
 
